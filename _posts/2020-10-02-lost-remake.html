@@ -1,0 +1,65 @@
+---
+layout: post
+title: "TSOC : Lost Revamped"
+subtitle: "How I revamped the Lost gameplay as a part of Terasology summer of code"
+date: 2020-10-01 09:00:00 -0400
+background: '/img/posts/lostbg.jpg'
+---
+
+<h2 class="section-heading">What is Terasology?</h2>
+
+<p><a href="https://github.com/MovingBlocks/Terasology">Terasology</a> is an open source voxel world. The project was
+    born from a Minecraft-inspired tech demo and is becoming a stable platform for various types
+    of gameplay settings in a voxel world.</p>
+<img class="img-fluid"
+    src="https://raw.githubusercontent.com/MovingBlocks/Terasology/develop/docs/images/menuBackground.jpg">
+
+<h2 class="section-heading">What is Lost?</h2>
+
+<p>Lost is an exploration focused gameplay set in the Terasology world. The player crashes into a desolate island while
+    on an exploration survey of one of the potential life-supporting planets in the neighbouring galaxy.
+    He sets out on a quest to find a way back to his planet.<br> It was originally made by <a
+        href="https://github.com/nihal111">Nihal Singh</a>.</p>
+<img class="img-fluid" src="https://nihal111.github.io/img/lostBackground.jpg">
+
+
+<h2 class="section-heading">The Drawbacks</h2>
+
+<p>Lost was originally released as a saved game in the Terasology Omega release. Further changes in the engine led to
+    the saved game becoming incompatible.
+    Also in the original gameplay cardinal directions are used as hints to the next challenge which makes adding new
+    challenges difficult.
+</p>
+
+<h2 class="section-heading">Revamped Lost design</h2>
+
+<p> The new design of Lost uses biome names as hints for where the next challenge would spawn. The hints are given
+    through a riddle poem.
+    <br>
+    A new world generator PolyWorld is used so that the Lost world can be procedurally generated and hence overcoming
+    the problem of Lost becoming incompatible with new engine releases.
+    The existing challenge <a href="https://github.com/Terasology/StructureTemplates">Structure Templates</a> are reused
+    and
+    a challenge is assigned to each biome.
+    <h4 class="subheading">Why PolyWorld?</h4>
+    PolyWorld uses a polygonal map generation algorithm to generate a world. It procedurally generates
+    <a href="https://en.wikipedia.org/wiki/Voronoi_diagram">Voronoi diagrams</a> and assigns each generated polygon a
+    biome on the basis of moisture and elevation values. Hence each biome has polygonal boundaries which makes it
+    easier (as opposed to noise based world generation algorithms) to calculate the spawn location for challenges.
+    <br><br>&nbsp;
+    <img class="img-fluid"
+        src="http://www-cs-students.stanford.edu/~amitp/game-programming/polygon-map-generation/overview.png">
+</p>
+
+<h2 class="section-heading">Experience at Terasology</h2>
+<p>
+    It was great to work under the guidance of my mentors <a href=https://github.com/Cervator>Rasmus 'Cervator'
+        Praestholm</a> and <a href="https://github.com/jdrueckert">Josie 'Niruandaleth' Rueckert</a>.
+    From my first PR to a whole summer project it has been an amazing learning experience. The project has sparked
+    newfound intrests in procedural generation and game design in me. I am looking forward to contributing further in
+    Terasology in these fields.
+</p>
+
+<h6 class="subheading">References</h6>
+<p><a href="http://www-cs-students.stanford.edu/~amitp/game-programming/polygon-map-generation/">Polygonal map
+        generation by Amit Patel</a></p>
